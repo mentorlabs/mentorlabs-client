@@ -55,7 +55,7 @@ export class Navigation extends Component {
               </div>
               <div className="navbar-item">
                 <NavLink
-                  to="/jobs"
+                  to="/join"
                   className="is-medium is-link"
                   activeClassName="is-active"
                   exact={true}
