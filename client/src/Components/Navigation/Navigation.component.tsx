@@ -60,7 +60,7 @@ export class Navigation extends Component {
                   activeClassName="is-active"
                   exact={true}
                 >
-                  <p>Jobs</p>
+                  <p>Join Now!</p>
                 </NavLink>
               </div>
             </div>
