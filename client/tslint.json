@@ -13,6 +13,7 @@
     "ordered-imports": false,
     "variable-name": false,
     "object-literal-sort-keys": false,
-    "interface-name": false
+    "interface-name": false,
+    "no-boolean-literal-compare": false
   }
 }
