@@ -55,12 +55,12 @@ export class Navigation extends Component {
               </div>
               <div className="navbar-item">
                 <NavLink
-                  to="/join"
+                  to="/signup"
                   className="is-medium is-link"
                   activeClassName="is-active"
                   exact={true}
                 >
-                  <p>Join Now!</p>
+                  <p>Signup!</p>
                 </NavLink>
               </div>
             </div>
