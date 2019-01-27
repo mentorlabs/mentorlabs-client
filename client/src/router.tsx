@@ -1,30 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Navigation, Footer, Home } from "./Components";
 
-const Index = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
-const Users = () => <h2>Users</h2>;
+const Join = () => <h2>Join Now!</h2>;
 
 export const AppRouter = () => (
   <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about/">About</Link>
-          </li>
-          <li>
-            <Link to="/users/">Users</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Route path="/" exact={true} component={Index} />
-      <Route path="/about/" component={About} />
-      <Route path="/users/" component={Users} />
-    </div>
+    <React.Fragment>
+      <Navigation />
+      <div>
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/join/" component={Join} />
+      </div>
+      <Footer />
+    </React.Fragment>
   </Router>
 );
