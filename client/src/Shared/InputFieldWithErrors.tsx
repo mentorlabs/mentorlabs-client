@@ -17,8 +17,6 @@ export const inputFieldWithErrors = ({
       <div className="control">
         <input {...field} {...props} className="input" />
       </div>
-      {/* {errorMsg && <div>{errorMsg}</div>}
-       */}
       <ErrorMessage
         name={field.name}
         component={'div'}
