@@ -1,9 +1,30 @@
-import React, { Component } from "react";
+import React from 'react';
 // import { Link, NavLink } from "react-router-dom";
 
-import "./Signup.scss";
+import './Signup.scss';
+import { FormikProps, FormikValues, Field } from 'formik';
+import { inputFieldWithErrors } from '../../Shared';
 
-export const Signup: React.FunctionComponent<any> = () => {
+export const Signup: React.FunctionComponent<
+  FormikProps<FormikValues>
+> = props => {
+  const {
+    values,
+    touched,
+    errors,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isSubmitting
+  } = props;
+
+  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // tslint:disable
+    console.log('submit form');
+    handleSubmit();
+  };
+
   return (
     <section className="hero is-fullheight">
       <div className="hero-body">
@@ -12,31 +33,39 @@ export const Signup: React.FunctionComponent<any> = () => {
             <h3 className="title has-text-grey">Signup</h3>
             <p className="subtitle has-text-grey">Please signup to proceed.</p>
             <div className="box">
-              <figure className="avatar">
-                <img src="https://placehold.it/128x128" />
-              </figure>
-              <form>
-                <div className="field">
-                  <div className="control">
-                    <input
-                      className="input"
-                      type="email"
-                      placeholder="Your Email"
-                    />
-                  </div>
-                </div>
+              <form onSubmit={submitForm}>
+                <Field
+                  name="firstname"
+                  placeholder="Enter Firstname"
+                  component={inputFieldWithErrors}
+                />
+                <Field
+                  name="lastname"
+                  placeholder="Enter Lastname"
+                  component={inputFieldWithErrors}
+                />
+                <Field
+                  name="email"
+                  placeholder="Enter email"
+                  component={inputFieldWithErrors}
+                />
+                <Field
+                  name="password"
+                  placeholder="Password"
+                  component={inputFieldWithErrors}
+                />
+                <Field
+                  name="passwordConfirm"
+                  placeholder="Confirm Password"
+                  component={inputFieldWithErrors}
+                />
 
-                <div className="field">
-                  <div className="control">
-                    <input
-                      className="input"
-                      type="password"
-                      placeholder="Your Password"
-                    />
-                  </div>
-                </div>
-                <button className="button is-block is-link is-medium is-fullwidth">
-                  Signup
+                <button
+                  className="button is-block is-link is-medium is-fullwidth"
+                  type="submit"
+                  // onClick={() => handleSubmit}
+                >
+                  {isSubmitting ? 'Submitting... ' : 'Signup'}
                 </button>
               </form>
             </div>
