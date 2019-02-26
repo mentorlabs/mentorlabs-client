@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
-import "./Navigation.scss";
+import './Navigation.scss';
 
 export class Navigation extends Component {
   public navToggle = () => {
     // ! is a typescript hack, need to revist implementation
-    document.querySelector(".navbar-menu")!.classList.toggle("is-active");
+    document.querySelector('.navbar-menu')!.classList.toggle('is-active');
   };
 
   public render() {
@@ -51,6 +51,16 @@ export class Navigation extends Component {
                   exact={true}
                 >
                   <p>Home</p>
+                </NavLink>
+              </div>
+              <div className="navbar-item">
+                <NavLink
+                  to="/ideas"
+                  className="is-medium is-link"
+                  activeClassName="is-active"
+                  exact={true}
+                >
+                  <p>Ideas</p>
                 </NavLink>
               </div>
               <div className="navbar-item">

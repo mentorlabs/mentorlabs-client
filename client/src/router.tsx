@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Navigation, Footer, Home, Signup, Login } from './Components';
+import { Navigation, Footer, Home, Signup, Login, Ideas } from './Components';
 
 export const AppRouter = () => (
   <Router>
@@ -10,6 +10,7 @@ export const AppRouter = () => (
         <Route path="/" exact={true} component={Home} />
         <Route path="/signup/" exact={true} component={Signup} />
         <Route path="/login/" exact={true} component={Login} />
+        <Route path="/ideas/" exact={true} component={Ideas} />
       </div>
       <Footer />
     </React.Fragment>
