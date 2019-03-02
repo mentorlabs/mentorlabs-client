@@ -1,7 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Navigation, Footer, Home, Signup, Login, Ideas } from './Components';
-import { directive } from 'babel-types';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  Navigation,
+  Footer,
+  Home,
+  Signup,
+  Login,
+  Ideas,
+  NewIdeaForm
+} from './Components';
 
 export const AppRouter = () => (
   <Router>
@@ -9,14 +16,12 @@ export const AppRouter = () => (
       <Navigation />
       <div>
         <Route path="/" exact={true} component={Home} />
-        <Route path="/signup/" exact={true} component={Signup} />
-        <Route path="/login/" exact={true} component={Login} />
-        <Route path="/ideas/" exact={true} component={Ideas} />
-        <Route
-          path="/idea/"
-          exact={true}
-          component={() => <div>idea submit</div>}
-        />
+        <Route path="/signup" component={Signup} />
+        <Route path="/login" component={Login} />
+        <Switch>
+          <Route path="/ideas/new" component={NewIdeaForm} />
+          <Route path="/ideas" component={Ideas} />
+        </Switch>
       </div>
       <Footer />
     </React.Fragment>
